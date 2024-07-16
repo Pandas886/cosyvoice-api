@@ -25,16 +25,16 @@ os.makedirs(tmp_dir,exist_ok=True)
 os.makedirs(logs_dir,exist_ok=True)
 os.makedirs(f'{root_dir}/pretrained_models',exist_ok=True)
 
-if not os.path.exists('pretrained_models/CosyVoice-300M/cosyvoice.yaml') or not os.path.exists('pretrained_models/CosyVoice-300M-SFT/cosyvoice.yaml'):
-    snapshot_download('iic/CosyVoice-300M', cache_dir='pretrained_models/CosyVoice-300M',local_dir='pretrained_models/CosyVoice-300M')
-    snapshot_download('iic/CosyVoice-300M-SFT', cache_dir='pretrained_models/CosyVoice-300M-SFT',local_dir='pretrained_models/CosyVoice-300M-SFT')
+if not os.path.exists('/root/.cache/modelscope/hub/iic/CosyVoice-300M/cosyvoice.yaml') or not os.path.exists('/root/.cache/modelscope/hub/iic/CosyVoice-300M-SFT/cosyvoice.yaml'):
+    snapshot_download('iic/CosyVoice-300M', cache_dir='/root/.cache/modelscope/hub/iic/CosyVoice-300M',local_dir='/root/.cache/modelscope/hub/iic/CosyVoice-300M')
+    snapshot_download('iic/CosyVoice-300M-SFT', cache_dir='/root/.cache/modelscope/hub/iic/CosyVoice-300M-SFT',local_dir='/root/.cache/modelscope/hub/iic/CosyVoice-300M-SFT')
 
 # 预加载SFT模型
-tts_model = CosyVoice('pretrained_models/CosyVoice-300M-SFT')
+tts_model = CosyVoice('/root/.cache/modelscope/hub/iic/CosyVoice-300M-SFT')
 #tts_model = None
 # 懒加载clone模型，在第一次克隆时加载
 clone_model = None
-#clone_model = CosyVoice('pretrained_models/CosyVoice-300M')
+#clone_model = CosyVoice('/root/.cache/modelscope/hub/iic/CosyVoice-300M')
 
 
 '''
