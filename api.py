@@ -198,7 +198,7 @@ def clone_eq():
     global clone_model
     if not clone_model:
         print('第一次克隆加载模型...')
-        clone_model = CosyVoice('pretrained_models/CosyVoice-300M')
+        clone_model = CosyVoice('/root/.cache/modelscope/hub/iic/CosyVoice-300M')
     try:
         params=get_params(request)
         if not params['text']:
@@ -219,7 +219,7 @@ def clone_mul():
     global clone_model
     if not clone_model:
         print('第一次克隆加载模型...')
-        clone_model = CosyVoice('pretrained_models/CosyVoice-300M')
+        clone_model = CosyVoice('/root/.cache/modelscope/hub/iic/CosyVoice-300M')
     try:
         params=get_params(request)
         if not params['text']:
